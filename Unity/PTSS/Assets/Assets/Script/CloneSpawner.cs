@@ -5,14 +5,16 @@ using UnityEngine;
 public class CloneSpawner : MonoBehaviour
 {
     public int numClones = 0;
-    public float timeBetweenClones = 0;
+    public float timeBetweenClones = 1f;
     public GameObject clonePrefab;
     public GameObject scriptToAdd;
+    public float timzz = 0;
 
     private bool isClone = false;
 
     void Start()
     {
+
         if (transform.parent != null)
         {
             isClone = true;
@@ -33,6 +35,7 @@ public class CloneSpawner : MonoBehaviour
         {
             // Wait for specified time before spawning clone
             yield return new WaitForSeconds(timeBetweenClones);
+            timzz = Time.deltaTime;
 
 
             GameObject clone = Instantiate(clonePrefab, transform.position, Quaternion.identity);

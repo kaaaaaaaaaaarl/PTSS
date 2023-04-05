@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -7,6 +8,7 @@ public class map1Move : MonoBehaviour
     public float speed = 5f;
     public Transform[] waypoints;
     public float minDistance = 0.1f;
+    public float health = 10f;
 
     private int currentWaypoint = 0;
     private Rigidbody2D rb;
@@ -27,8 +29,17 @@ public class map1Move : MonoBehaviour
             {
                 Destroy(gameObject);
             }
+            if (health <= 0) {
+                Destroy(gameObject);
+            }
         }
         Vector2 direction = (waypoints[currentWaypoint].position - transform.position).normalized;
         rb.velocity = direction * speed;
     }
+
+    internal void TakeDamage(int damage)
+    {
+        health = health - damage;
+    }
+
 }

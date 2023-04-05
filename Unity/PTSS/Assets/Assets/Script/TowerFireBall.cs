@@ -5,12 +5,12 @@ using UnityEngine;
 
 public class TowerFireBall : MonoBehaviour
 {
-    public float range = 5f;
+    public float range = 20f;
     public float fireRate = 0.5f;
     public GameObject fireballPrefab;
 
     private Transform pizzaTransform;
-    private float nextFireTime;
+    public float nextFireTime;
 
     void Start()
     {
@@ -19,16 +19,16 @@ public class TowerFireBall : MonoBehaviour
 
     void Update()
     {
-        if (Vector3.Distance(transform.position, pizzaTransform.position) <= range && Time.time >= nextFireTime)
+        if (Vector3.Distance(transform.position, pizzaTransform.position) <= range && Time.time*Time.deltaTime >= nextFireTime)
         {
             Fire();
-            nextFireTime = Time.time + fireRate;
+            nextFireTime = Time.time * Time.deltaTime + fireRate;
         }
     }
 
     void Fire()
     {
         GameObject fireball = Instantiate(fireballPrefab, transform.position, Quaternion.identity);
-        fireball.GetComponent<Rigidbody>().velocity = (pizzaTransform.position - transform.position).normalized * fireball.GetComponent<fireball>().speed;
+        fireball.GetComponent<Rigidbody>().velocity = (pizzaTransform.position - transform.position).normalized * fireball.GetComponent<FireBallShoot>().speed*Time.deltaTime;
     }
 }

@@ -9,7 +9,7 @@ public class FireBallShoot : MonoBehaviour
 
     void Update()
     {
-        transform.Translate(Vector3.forward * speed * Time.deltaTime);
+        Debug.Log(Time.time);
     }
 
     void OnTriggerEnter(Collider other)
@@ -19,5 +19,9 @@ public class FireBallShoot : MonoBehaviour
             other.GetComponent<map1Move>().TakeDamage(damage);
             Destroy(gameObject);
         }
+    }
+    private void OnAnimatorMove()
+    {
+        transform.Translate(Vector3.forward * speed * Time.deltaTime);
     }
 }
