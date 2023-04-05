@@ -219,7 +219,11 @@ MonoBehaviour:
   m_MinSize: {x: 402, y: 492}
   m_MaxSize: {x: 10001, y: 14042}
   vertical: 1
+<<<<<<< HEAD
   controlID: 57
+=======
+  controlID: 55
+>>>>>>> 0466ab894de8d9fee9acb794e9f8f619c34d2a9a
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -244,7 +248,11 @@ MonoBehaviour:
   m_MinSize: {x: 402, y: 221}
   m_MaxSize: {x: 8002, y: 4021}
   vertical: 0
+<<<<<<< HEAD
   controlID: 58
+=======
+  controlID: 56
+>>>>>>> 0466ab894de8d9fee9acb794e9f8f619c34d2a9a
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -338,6 +346,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
+<<<<<<< HEAD
     - Assets/Assets/Script
   m_ViewMode: 1
   m_StartGridSize: 64
@@ -345,13 +354,28 @@ MonoBehaviour:
   - Assets/Assets/Script
   m_LastFoldersGridSize: -1
   m_LastProjectPath: "C:\\Users\\K\u0101rlis\\projects\\Unity\\PTSS"
+=======
+    - Assets/Scenes
+  m_ViewMode: 1
+  m_StartGridSize: 64
+  m_LastFolders:
+  - Assets/Scenes
+  m_LastFoldersGridSize: -1
+  m_LastProjectPath: "C:\\Users\\K\u0101rlis\\rgdfjkrefvioj\\Unity\\PTSS"
+>>>>>>> 0466ab894de8d9fee9acb794e9f8f619c34d2a9a
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
+<<<<<<< HEAD
     m_SelectedIDs: 6a3c0000
     m_LastClickedID: 15466
     m_ExpandedIDs: 00000000403c0000463c000000ca9a3b
+=======
+    m_SelectedIDs: 243c0000
+    m_LastClickedID: 15396
+    m_ExpandedIDs: 000000001e3c000000ca9a3b
+>>>>>>> 0466ab894de8d9fee9acb794e9f8f619c34d2a9a
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -379,7 +403,11 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
+<<<<<<< HEAD
     m_ExpandedIDs: 00000000403c0000
+=======
+    m_ExpandedIDs: 000000001e3c0000
+>>>>>>> 0466ab894de8d9fee9acb794e9f8f619c34d2a9a
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -406,7 +434,7 @@ MonoBehaviour:
   m_ListAreaState:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
-    m_HadKeyboardFocusLastEvent: 1
+    m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs: c6230000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -502,9 +530,13 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 
+      m_SelectedIDs: 243c0000
       m_LastClickedID: 0
+<<<<<<< HEAD
       m_ExpandedIDs: 62fbfffff03b0000f43b0000
+=======
+      m_ExpandedIDs: 58fbffff
+>>>>>>> 0466ab894de8d9fee9acb794e9f8f619c34d2a9a
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
