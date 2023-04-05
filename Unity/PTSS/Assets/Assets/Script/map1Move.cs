@@ -18,13 +18,13 @@ public class map1Move : MonoBehaviour
 
     void Update()
     {
+        if (waypoints.Length == 0) return;
+
         if (Vector2.Distance(transform.position, waypoints[currentWaypoint].position) < minDistance)
         {
-            currentWaypoint++;
-            if (currentWaypoint >= waypoints.Length)
+            currentWaypoint = (currentWaypoint + 1) % waypoints.Length;
+            if (currentWaypoint == 0)
             {
-                // If we have reached the last waypoint, create a new clone of the enemy and destroy this one
-                Instantiate(gameObject, waypoints[0].position, Quaternion.identity);
                 Destroy(gameObject);
             }
         }
