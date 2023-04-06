@@ -33,11 +33,13 @@ public class map1Move : MonoBehaviour
                 Destroy(gameObject);
             }
         }
-        Vector2 direction = (waypoints[currentWaypoint].position - transform.position).normalized;
-        rb.velocity = direction * speed;
+        if (gameObject.activeSelf) {
+            Vector2 direction = (waypoints[currentWaypoint].position - transform.position).normalized;
+            rb.velocity = direction * speed;
+        } 
     }
 
-    internal void TakeDamage(int damage)
+    internal void TakeDamage(float damage)
     {
         health = health - damage;
     }

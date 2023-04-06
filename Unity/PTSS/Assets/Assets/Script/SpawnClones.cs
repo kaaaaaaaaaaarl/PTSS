@@ -10,20 +10,13 @@ public class SpawnClones : MonoBehaviour
     public Transform[] waypoints;
     public float timzz = 0;
 
+    private float nextFireTime;
+
     // Start is called before the first frame update
     void Start()
     {
-        for (int i = 0; i < numClones; i++)
-        {
-            
-            // Spawn a new clone
-            GameObject spawnedClone = Instantiate(enemyPrefab, transform.position, Quaternion.identity);
 
-            // Add a WaypointFollower component to the clone and set its waypoints
-
-            // Wait before spawning the next clone
-            StartCoroutine(WaitAndSpawn());
-        }
+       
     }
 
     IEnumerator WaitAndSpawn()
@@ -34,6 +27,9 @@ public class SpawnClones : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        timzz = Time.realtimeSinceStartup;
+        if (Time.time > nextFireTime) {
+            GameObject spawnedClone = Instantiate(enemyPrefab, transform.position, Quaternion.identity);
+            nextFireTime = Time.time + timeBetweenClones;
+        }
     }
 }
