@@ -3,9 +3,7 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags:
-  - Pizza
-  - Bullet
+  tags: []
   layers:
   - Default
   - TransparentFX
@@ -42,10 +40,4 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
-    locked: 0
-  - name: Map
-    uniqueID: 1439019819
-    locked: 0
-  - name: hmmm
-    uniqueID: 359103163
     locked: 0
