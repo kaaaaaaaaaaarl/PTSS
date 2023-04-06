@@ -11,47 +11,40 @@ public class TowerShoot2 : MonoBehaviour
 
     private Transform target;
     private float fireCountdown = 0f;
+    public List<GameObject> colliderList = new List<GameObject>();
 
     void Update()
     {
-        FindTarget();
 
-        if (target == null)
-            return;
+    }
 
-        if (fireCountdown <= 0f)
+    public void OnTriggerEnter2D(Collider2D collider)
+    {
+        if (!colliderList.Contains(collider.gameObject))
         {
-            Shoot();
-            fireCountdown = 1f / fireRate;
-        }
+            colliderList.Add(collider.gameObject);
+            if (collider.gameObject.name != "FireBall" || collider.gameObject.name != "FireBall (clone)" || Time.time >= fireCountdown)
+            {
+                target = collider.gameObject.transform;
+                Shoot();
+                fireCountdown = fireRate + Time.time;
+            }
 
-        fireCountdown -= Time.deltaTime;
+        }
+    }
+    public void OnTriggerExit2D(Collider2D collider)
+    {
+        if (colliderList.Contains(collider.gameObject))
+        {
+            colliderList.Remove(collider.gameObject);
+
+        }
     }
 
     void FindTarget()
     {
-        GameObject[] enemies = GameObject.FindGameObjectsWithTag("Pizza");
-        float shortestDistance = Mathf.Infinity;
-        GameObject nearestEnemy = null;
 
-        foreach (GameObject enemy in enemies)
-        {
-            float distanceToEnemy = Vector3.Distance(transform.position, enemy.transform.position);
-            if (distanceToEnemy < shortestDistance && distanceToEnemy <= range)
-            {
-                shortestDistance = distanceToEnemy;
-                nearestEnemy = enemy;
-            }
-        }
-
-        if (nearestEnemy != null)
-        {
-            target = nearestEnemy.transform;
-        }
-        else
-        {
-            target = null;
-        }
+   
     }
 
     void Shoot()

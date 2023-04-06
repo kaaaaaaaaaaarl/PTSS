@@ -9,8 +9,9 @@ public class SpawnClones : MonoBehaviour
     public GameObject enemyPrefab;
     public Transform[] waypoints;
     public float timzz = 0;
+    
 
-    private float nextFireTime;
+    public float nextFireTime;
 
     // Start is called before the first frame update
     void Start()
@@ -27,9 +28,13 @@ public class SpawnClones : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        timzz = Time.time;
         if (Time.time > nextFireTime) {
+            
             GameObject spawnedClone = Instantiate(enemyPrefab, transform.position, Quaternion.identity);
             nextFireTime = Time.time + timeBetweenClones;
+            
+
         }
     }
 }
