@@ -10,7 +10,7 @@ public class TowerShoot2 : MonoBehaviour
     public float range = 5f;
 
     private Transform target;
-    private float fireCountdown = 0f;
+    private float fireCountdown = 5f;
     public List<GameObject> colliderList = new List<GameObject>();
 
     void Update()
@@ -20,7 +20,7 @@ public class TowerShoot2 : MonoBehaviour
 
     public void OnTriggerEnter2D(Collider2D collider)
     {
-        if (!colliderList.Contains(collider.gameObject))
+        if (!colliderList.Contains(collider.gameObject) && collider.gameObject.name== "pngegg(Clone)")
         {
             colliderList.Add(collider.gameObject);
             if (collider.gameObject.name != "FireBall" || collider.gameObject.name != "FireBall (clone)" || Time.time >= fireCountdown)
@@ -28,6 +28,8 @@ public class TowerShoot2 : MonoBehaviour
                 target = collider.gameObject.transform;
                 Shoot();
                 fireCountdown = fireRate + Time.time;
+                Debug.Log(fireCountdown);
+                Debug.Log(Time.time);
             }
 
         }
