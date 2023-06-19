@@ -7,10 +7,21 @@ public class Fireball : MonoBehaviour
     public float speed = 10f; // The speed of the fireball
     public float damage = 10f;
     private Transform target; // The current target of the fireball
-
+    private Transform startTransform;
+    public float distance = 4.0f;
+    public GameObject thisss;
+    private float cs;
+    void Start()
+    {
+        thisss = this.gameObject.transform.parent.gameObject;
+        
+        //float thisObjectMove = cs.move;
+    }
     // Update is called once per frame
     void Update()
     {
+        
+        
         if (target != null)
         {
             Debug.Log("Fireball target: " + target.gameObject.name);
@@ -37,7 +48,7 @@ public class Fireball : MonoBehaviour
     void OnTriggerEnter2D(Collider2D collision)
     {
         // Check if the fireball has collided with an enemy
-        if (collision.CompareTag("Pizza"))
+        if (collision.CompareTag("Pizza") && thisss.GetComponent<TowerShoot2>().GetTarget() != null )
         {
             // Damage the enemy
             collision.GetComponent<map1Move>().TakeDamage(damage);
@@ -47,10 +58,14 @@ public class Fireball : MonoBehaviour
             Debug.Log("destroy?");
         }
     }
-
+    void OnTriggerExit2D(Collider2D collision) {
+        Destroy(gameObject);
+    }
     // Destroy the fireball when it hits the target
     void HitTarget()
     {
         Destroy(gameObject);
     }
+
+    
 }

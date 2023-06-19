@@ -18,6 +18,7 @@ public class map1Move : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         isClone = transform.parent != null && transform.parent.name.Contains("(Clone)");
+        
     }
 
 
@@ -31,6 +32,7 @@ public class map1Move : MonoBehaviour
 
         if (gameObject.name!= "pngegg")
         {
+            
             if (Vector2.Distance(transform.position, waypoints[currentWaypoint].position) < minDistance)
             {
                 currentWaypoint = (currentWaypoint + 1) % waypoints.Length;

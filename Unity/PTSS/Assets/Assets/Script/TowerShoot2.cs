@@ -5,55 +5,55 @@ using UnityEngine;
 public class TowerShoot2 : MonoBehaviour
 {
     public GameObject fireballPrefab;
-    public float fireballSpeed = 10f;
-    public float fireRate = 2f;
+    public float fireballSpeed = 20f;
+    public float fireRate = 1f;
     public float range = 5f;
 
-    private Transform target;
-    private float fireCountdown = 5f;
+     public Transform target;
+    private float fireCountdown = 0f;
     public List<GameObject> colliderList = new List<GameObject>();
-
+    //runs all the shi
     void Update()
     {
-
+        if (fireCountdown <= 0f){
+            Shoot();
+            fireCountdown = 1f/fireRate;
+        }
+        fireCountdown -= Time.deltaTime;
     }
-
+    //checks local pizzas and places in a list
     public void OnTriggerEnter2D(Collider2D collider)
     {
         if (!colliderList.Contains(collider.gameObject) && collider.gameObject.name== "pngegg(Clone)")
         {
             colliderList.Add(collider.gameObject);
-            if (collider.gameObject.name != "FireBall" || collider.gameObject.name != "FireBall (clone)" || Time.time >= fireCountdown)
+            if (collider.gameObject.name != "FireBall" || collider.gameObject.name != "FireBall (clone)")
             {
                 target = collider.gameObject.transform;
-                Shoot();
-                fireCountdown = fireRate + Time.time;
-                Debug.Log(fireCountdown);
-                Debug.Log(Time.time);
             }
-
         }
     }
+    //destroys a fireball
     public void OnTriggerExit2D(Collider2D collider)
     {
         if (colliderList.Contains(collider.gameObject))
         {
             colliderList.Remove(collider.gameObject);
-
+        }
+    }
+  //shooting a target at the neerest pizza
+    void Shoot()
+    {
+        if (target != null) {
+            Debug.Log("shoot");
+            GameObject fireballGO = Instantiate(fireballPrefab, transform.position, Quaternion.identity);
+            Rigidbody2D rb = fireballGO.GetComponent<Rigidbody2D>();
+            Vector3 direction = (target.position - transform.position).normalized;
+            rb.velocity = direction * fireballSpeed;
         }
     }
 
-    void FindTarget()
-    {
-
-   
-    }
-
-    void Shoot()
-    {
-        GameObject fireballGO = Instantiate(fireballPrefab, transform.position, Quaternion.identity);
-        Rigidbody2D rb = fireballGO.GetComponent<Rigidbody2D>();
-        Vector3 direction = (target.position - transform.position).normalized;
-        rb.velocity = direction * fireballSpeed;
+    public Transform GetTarget() {
+        return (target);
     }
 }
