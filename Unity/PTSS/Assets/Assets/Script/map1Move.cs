@@ -9,17 +9,19 @@ public class map1Move : MonoBehaviour
     public Transform[] waypoints;
     public float minDistance = 0.1f;
     public float health = 4f;
+    public GameObject turrets;
 
     private int currentWaypoint = 0;
-    private Rigidbody2D rb;
+    private Rigidbody2D that;
     private bool isClone;
+
 
     void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
-        isClone = transform.parent != null && transform.parent.name.Contains("(Clone)");
-        
-    }
+        that = GetComponent<Rigidbody2D>();
+    
+
+        }
 
 
     void Update()
@@ -45,13 +47,14 @@ public class map1Move : MonoBehaviour
             if (gameObject.activeSelf)
             {
                 Vector2 direction = (waypoints[currentWaypoint].position - transform.position).normalized;
-                rb.velocity = direction * speed;
+                that.velocity = direction * speed;
             }
         }
     }
 
     internal void TakeDamage(float damage)
     {
+        
         health = health - damage;
     }
 

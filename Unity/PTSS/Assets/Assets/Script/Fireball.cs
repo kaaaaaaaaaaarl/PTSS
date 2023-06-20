@@ -9,11 +9,11 @@ public class Fireball : MonoBehaviour
     private Transform target; // The current target of the fireball
     private Transform startTransform;
     public float distance = 4.0f;
-    public GameObject thisss;
+    public GameObject player;
     private float cs;
     void Start()
     {
-        thisss = this.gameObject.transform.parent.gameObject;
+
         
         //float thisObjectMove = cs.move;
     }
@@ -48,9 +48,13 @@ public class Fireball : MonoBehaviour
     void OnTriggerEnter2D(Collider2D collision)
     {
         // Check if the fireball has collided with an enemy
-        if (collision.CompareTag("Pizza") && thisss.GetComponent<TowerShoot2>().GetTarget() != null )
+        
+        if (collision.CompareTag("Pizza"))
         {
             // Damage the enemy
+
+
+
             collision.GetComponent<map1Move>().TakeDamage(damage);
 
             // Destroy the fireball
