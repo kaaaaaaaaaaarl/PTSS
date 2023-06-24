@@ -10,6 +10,7 @@ public class Fireball : MonoBehaviour
     private Transform startTransform;
     public float distance = 4.0f;
     public GameObject player;
+    public GameObject moneythingy;
     private float cs;
     void Start()
     {
@@ -24,7 +25,7 @@ public class Fireball : MonoBehaviour
         
         if (target != null)
         {
-            Debug.Log("Fireball target: " + target.gameObject.name);
+            
 
             Vector3 direction = target.position - transform.position;
             float distanceThisFrame = speed * Time.deltaTime;
@@ -59,7 +60,8 @@ public class Fireball : MonoBehaviour
 
             // Destroy the fireball
             Destroy(gameObject);
-            Debug.Log("destroy?");
+            moneythingy.GetComponent<moneyThing>().addMoney(2);
+            
         }
     }
     void OnTriggerExit2D(Collider2D collision) {
@@ -68,6 +70,7 @@ public class Fireball : MonoBehaviour
     // Destroy the fireball when it hits the target
     void HitTarget()
     {
+        
         Destroy(gameObject);
     }
 

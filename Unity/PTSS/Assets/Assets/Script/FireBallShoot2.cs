@@ -48,7 +48,7 @@ public class FireBallShoot2 : MonoBehaviour
 
             // Destroy the fireball
             Destroy(gameObject);
-            Debug.Log("destroy?");
+            
         }
     }
 }

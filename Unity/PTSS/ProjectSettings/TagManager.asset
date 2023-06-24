@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Pizza
   - ' turrets'
+  - FireBall
   layers:
   - Default
   - TransparentFX

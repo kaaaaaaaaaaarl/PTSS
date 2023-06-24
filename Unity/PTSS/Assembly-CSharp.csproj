@@ -60,6 +60,7 @@
     <Compile Include="Assets\Assets\Script\FireBallShoot2.cs" />
     <Compile Include="Assets\Assets\Script\Fireball.cs" />
     <Compile Include="Assets\Assets\Script\FoireBall.cs" />
+    <Compile Include="Assets\Assets\Script\OvenShop.cs" />
     <Compile Include="Assets\Assets\Script\Scale.cs" />
     <Compile Include="Assets\Assets\Script\SpawnClones.cs" />
     <Compile Include="Assets\Assets\Script\Tower.cs" />
@@ -67,6 +68,8 @@
     <Compile Include="Assets\Assets\Script\TowerShoot2.cs" />
     <Compile Include="Assets\Assets\Script\dragNdrop.cs" />
     <Compile Include="Assets\Assets\Script\map1Move.cs" />
+    <Compile Include="Assets\Assets\Script\moneyThing.cs" />
+    <Compile Include="Assets\MainMenu.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
