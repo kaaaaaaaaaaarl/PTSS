@@ -13,14 +13,6 @@ public class TowerShoot2 : MonoBehaviour
     private float fireCountdown = 0f;
     public List<GameObject> colliderList = new List<GameObject>();
     //runs all the shi
-
-    private void Start()
-    {
-
-        fireballPrefab = GameObject.Find("FireBall");
-        GameObject fireballGO = Instantiate(fireballPrefab, transform.position, Quaternion.identity);
-        fireballGO.transform.SetParent(this.gameObject.transform);
-    }
     void Update()
     {
         if (fireCountdown <= 0f){
@@ -28,11 +20,6 @@ public class TowerShoot2 : MonoBehaviour
             fireCountdown = 1f/fireRate;
         }
         fireCountdown -= Time.deltaTime;
-        if (this.gameObject.transform.childCount <1) {
-            fireballPrefab = GameObject.Find("FireBall");
-            GameObject fireballGO = Instantiate(fireballPrefab, transform.position, Quaternion.identity);
-            fireballGO.transform.SetParent(this.gameObject.transform);
-        }
     }
     //checks local pizzas and places in a list
     public void OnTriggerEnter2D(Collider2D collider)
@@ -58,7 +45,7 @@ public class TowerShoot2 : MonoBehaviour
     void Shoot()
     {
         if (target != null) {
-            
+            Debug.Log("shoot");
             GameObject fireballGO = Instantiate(fireballPrefab, transform.position, Quaternion.identity);
             Rigidbody2D rb = fireballGO.GetComponent<Rigidbody2D>();
             Vector3 direction = (target.position - transform.position).normalized;
