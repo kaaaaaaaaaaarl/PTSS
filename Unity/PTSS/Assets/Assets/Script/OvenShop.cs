@@ -25,7 +25,8 @@ public class OvenShop : MonoBehaviour
             moneythingy.GetComponent<moneyThing>().removeMoney(OvenPrice);
             GameObject furnaceOBJ = Instantiate(ovenPrefab, transform.position += Vector3.left, Quaternion.identity);
             transform.position = myVector;
-
+            furnaceOBJ.transform.SetParent(moneythingy.transform);
+            
 
         }
     }

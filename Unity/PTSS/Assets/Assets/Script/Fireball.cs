@@ -24,7 +24,6 @@ public class Fireball : MonoBehaviour
         
         if (target != null)
         {
-            Debug.Log("Fireball target: " + target.gameObject.name);
 
             Vector3 direction = target.position - transform.position;
             float distanceThisFrame = speed * Time.deltaTime;
@@ -59,7 +58,7 @@ public class Fireball : MonoBehaviour
 
             // Destroy the fireball
             Destroy(gameObject);
-            Debug.Log("destroy?");
+
         }
     }
     void OnTriggerExit2D(Collider2D collision) {

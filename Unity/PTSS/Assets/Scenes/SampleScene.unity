@@ -333,7 +333,6 @@ MonoBehaviour:
   damage: 10
   distance: 4
   player: {fileID: 494969304}
-  moneythingy: {fileID: 889015061}
 --- !u!50 &137152680
 Rigidbody2D:
   serializedVersion: 4
@@ -615,7 +614,6 @@ MonoBehaviour:
   damage: 10
   distance: 4
   player: {fileID: 2000701834}
-  moneythingy: {fileID: 889015061}
 --- !u!50 &321535508
 Rigidbody2D:
   serializedVersion: 4
@@ -794,14 +792,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 346c15a55fe349f40b3ff334f70d6890, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  price: 20
-  InShop: 1
+  price: 0
+  InShop: 0
   moneythingy: {fileID: 889015061}
   sstartposX: 0
   sstartposY: 0
   CantPlaceColor: {r: 0, g: 0, b: 0, a: 0}
   turret: {fileID: 92898694}
-  furnaceThing: {fileID: 494969304}
+  furnaceThing: {fileID: 0}
 --- !u!114 &494969307
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1808,7 +1806,6 @@ MonoBehaviour:
   damage: 10
   distance: 4
   player: {fileID: 494969304}
-  moneythingy: {fileID: 889015061}
 --- !u!50 &1354711912
 Rigidbody2D:
   serializedVersion: 4

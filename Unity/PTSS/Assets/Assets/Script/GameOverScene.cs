@@ -21,7 +21,7 @@ public class GameOverScene : MonoBehaviour
     {
 
         if (col.name  == gameOverBar.name) {
-            Debug.Log("dammage delt");
+         
             //moneythingy.GetComponent<moneyThing>().removeMoney(OvenPrice);
             HealthMonitor.GetComponent<HealthMonitor>().removeHealth(1);
 
