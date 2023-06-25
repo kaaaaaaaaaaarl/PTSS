@@ -17,7 +17,25 @@ public class OvenShop : MonoBehaviour
         StartPositionX = this.transform.position.x;
         myVector = new Vector3(StartPositionX, StartPositionY, 0.0f);
     }
+    /*
+    private void Update()
+    {
+        if (Input.GetMouseButton(0))
+        {
+            if (moneythingy.GetComponent<moneyThing>().moneyCash >= OvenPrice)
+            {
+                moneythingy.GetComponent<moneyThing>().removeMoney(OvenPrice);
+                GameObject furnaceOBJ = Instantiate(ovenPrefab, transform.position += Vector3.left, Quaternion.identity);
+                transform.position = myVector;
+                furnaceOBJ.transform.SetParent(moneythingy.transform);
 
+
+            }
+
+        }
+    }
+    */
+    
     private void OnMouseDown()
     {
         Debug.Log("pressed");
@@ -30,4 +48,5 @@ public class OvenShop : MonoBehaviour
 
         }
     }
+
 }

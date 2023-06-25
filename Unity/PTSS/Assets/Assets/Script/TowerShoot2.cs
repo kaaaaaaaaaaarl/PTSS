@@ -15,6 +15,11 @@ public class TowerShoot2 : MonoBehaviour
     //runs all the shi
     void Update()
     {
+        if (!fireballPrefab)
+        {
+            fireballPrefab= GameObject.Find("FireBall");
+
+        }
         if (fireCountdown <= 0f){
             Shoot();
             fireCountdown = 1f/fireRate;

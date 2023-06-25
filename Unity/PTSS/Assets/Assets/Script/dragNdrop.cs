@@ -22,7 +22,7 @@ public class dragNdrop : MonoBehaviour
         public GameObject turret;
         public GameObject furnaceThing;
 
-        private bool canPlace = true;
+        public bool canPlace = true;
         private SpriteRenderer rend;
         private CircleCollider2D circleCollider;
 
@@ -90,9 +90,9 @@ public class dragNdrop : MonoBehaviour
 
         private void OnMouseUp()
         {
-            isBeingHeld = false;
 
-            if (canPlace)
+
+            if (transform.position.x >6.2f)
             {
                 // rend = GetComponent<SpriteRenderer>();
                 //rend.color = CantPlaceColor;
@@ -123,7 +123,7 @@ public class dragNdrop : MonoBehaviour
 
         void OnTriggerExit2D(Collider2D col)
         {
-            if (this.transform.parent.ToString().Contains("MONEY") && col.name == "Shop")
+            if (col.name == "Shop")
             {
                 
                 canPlace = true;
