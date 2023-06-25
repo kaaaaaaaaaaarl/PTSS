@@ -10,6 +10,7 @@ public class Fireball : MonoBehaviour
     private Transform startTransform;
     public float distance = 4.0f;
     public GameObject player;
+    public GameObject moneyobject;
     private float cs;
     void Start()
     {
@@ -53,7 +54,7 @@ public class Fireball : MonoBehaviour
             // Damage the enemy
 
 
-
+            moneyobject.GetComponent<moneyThing>().addMoney(5.0f);
             collision.GetComponent<map1Move>().TakeDamage(damage);
 
             // Destroy the fireball
@@ -67,7 +68,9 @@ public class Fireball : MonoBehaviour
     // Destroy the fireball when it hits the target
     void HitTarget()
     {
+        
         Destroy(gameObject);
+
     }
 
     

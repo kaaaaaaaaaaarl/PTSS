@@ -59,8 +59,9 @@
     <Compile Include="Assets\Assets\Script\CloneSpawner.cs" />
     <Compile Include="Assets\Assets\Script\FireBallShoot2.cs" />
     <Compile Include="Assets\Assets\Script\Fireball.cs" />
-    <Compile Include="Assets\Assets\Script\FoireBall.cs" />
     <Compile Include="Assets\Assets\Script\GameOverScene.cs" />
+    <Compile Include="Assets\Assets\Script\GameOverScript.cs" />
+    <Compile Include="Assets\Assets\Script\HealthBar.cs" />
     <Compile Include="Assets\Assets\Script\HealthMonitor.cs" />
     <Compile Include="Assets\Assets\Script\OvenShop.cs" />
     <Compile Include="Assets\Assets\Script\Pause.cs" />

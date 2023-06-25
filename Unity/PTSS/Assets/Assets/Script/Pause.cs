@@ -6,15 +6,17 @@ public class Pause : MonoBehaviour
 {
     // Start is called before the first frame update
     public bool paused = false;
+    public GameObject PauseMenu;
+
     void Start()
     {
-
+ 
     }
 
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(Time.realtimeSinceStartup);
+     
     }
     private void OnMouseDown()
     {
@@ -22,11 +24,13 @@ public class Pause : MonoBehaviour
         {
             paused = false;
             Time.timeScale = 1;
+            PauseMenu.SetActive(false);
         }
         else 
         {
             paused = true;
             Time.timeScale = 0;
+            PauseMenu.SetActive(true);
         }
         
     }
