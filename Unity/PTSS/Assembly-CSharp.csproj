@@ -60,6 +60,8 @@
     <Compile Include="Assets\Assets\Script\FireBallShoot2.cs" />
     <Compile Include="Assets\Assets\Script\Fireball.cs" />
     <Compile Include="Assets\Assets\Script\FoireBall.cs" />
+    <Compile Include="Assets\Assets\Script\GameOverScene.cs" />
+    <Compile Include="Assets\Assets\Script\HealthMonitor.cs" />
     <Compile Include="Assets\Assets\Script\OvenShop.cs" />
     <Compile Include="Assets\Assets\Script\Scale.cs" />
     <Compile Include="Assets\Assets\Script\SpawnClones.cs" />
