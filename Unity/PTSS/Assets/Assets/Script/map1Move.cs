@@ -11,6 +11,7 @@ public class map1Move : MonoBehaviour
     public float health = 4f;
     public GameObject turrets;
 
+
     private int currentWaypoint = 0;
     private Rigidbody2D that;
     private bool isClone;
@@ -32,10 +33,10 @@ public class map1Move : MonoBehaviour
         }
         if (waypoints.Length == 0) return;
 
-        if (gameObject.name!= "pngegg")
+            if (gameObject.name!= "pngegg")
         {
-            
-            if (Vector2.Distance(transform.position, waypoints[currentWaypoint].position) < minDistance)
+
+                if (Vector2.Distance(transform.position, waypoints[currentWaypoint].position) < minDistance)
             {
                 currentWaypoint = (currentWaypoint + 1) % waypoints.Length;
                 if (currentWaypoint == 0)

@@ -63,11 +63,13 @@
     <Compile Include="Assets\Assets\Script\GameOverScene.cs" />
     <Compile Include="Assets\Assets\Script\HealthMonitor.cs" />
     <Compile Include="Assets\Assets\Script\OvenShop.cs" />
+    <Compile Include="Assets\Assets\Script\Pause.cs" />
     <Compile Include="Assets\Assets\Script\Scale.cs" />
     <Compile Include="Assets\Assets\Script\SpawnClones.cs" />
     <Compile Include="Assets\Assets\Script\Tower.cs" />
     <Compile Include="Assets\Assets\Script\TowerFireBall.cs" />
     <Compile Include="Assets\Assets\Script\TowerShoot2.cs" />
+    <Compile Include="Assets\Assets\Script\Waves.cs" />
     <Compile Include="Assets\Assets\Script\dragNdrop.cs" />
     <Compile Include="Assets\Assets\Script\map1Move.cs" />
     <Compile Include="Assets\Assets\Script\moneyThing.cs" />

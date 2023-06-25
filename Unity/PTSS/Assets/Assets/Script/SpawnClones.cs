@@ -4,14 +4,13 @@ using UnityEngine;
 
 public class SpawnClones : MonoBehaviour
 {
-    public int numClones = 0;
     public float timeBetweenClones = 0f;
     public GameObject enemyPrefab;
     public Transform[] waypoints;
-    public float timzz = 0;
+    private float timzz = 0;
     
 
-    public float nextFireTime;
+    private float nextFireTime;
 
     // Start is called before the first frame update
     void Start()
